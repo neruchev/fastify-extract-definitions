@@ -1,0 +1,42 @@
+{
+  "name": "fastify-extract-definitions",
+  "version": "0.0.1",
+  "description": "Retrieves TypeScript definitions from Fastify router schema",
+  "main": "./build",
+  "repository": "git@github.com:neruchev/fastify-extract-definitions.git",
+  "author": "Kirill Neruchev <kirill@neruchev.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc -b",
+    "watch": "tsc -b -w",
+    "test": "jest",
+    "prettier": "prettier --check .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "fastify-plugin": "^3.0.0",
+    "fastify-routes": "^3.0.1",
+    "json-schema-to-typescript": "^10.1.4",
+    "prettier": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "pretty-quick": "^3.1.1",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
+  },
+  "files": [
+    "build"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

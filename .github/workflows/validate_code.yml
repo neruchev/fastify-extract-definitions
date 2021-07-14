@@ -1,0 +1,34 @@
+name: fastify-extract-definitions
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  validate_code:
+    name: Validate code
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run prettier check
+        run: yarn run prettier
+
+      - name: Run linter
+        run: yarn run lint
+
+      - name: Run unit tests
+        run: yarn run test
