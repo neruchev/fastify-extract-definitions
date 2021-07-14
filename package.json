@@ -11,6 +11,7 @@
     "build": "tsc -b",
     "watch": "tsc -b -w",
     "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx --resolve-plugins-relative-to .",
     "prettier": "prettier --check .",
     "prepare": "husky install"
   },
@@ -27,6 +28,7 @@
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "fastify": "^3.19.1",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "pretty-quick": "^3.1.1",

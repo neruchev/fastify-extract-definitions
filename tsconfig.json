@@ -3,7 +3,7 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "declaration": false,
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": false,
@@ -24,6 +24,6 @@
     "strictPropertyInitialization": true,
     "target": "es2018"
   },
-  "include": ["src/**/*", "__tests__/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "typings/**/*", "__tests__/**/*"],
+  "exclude": ["build", "node_modules"]
 }
