@@ -2,7 +2,18 @@
   "name": "fastify-extract-definitions",
   "version": "0.0.1",
   "description": "Retrieves TypeScript definitions from Fastify router schema",
-  "main": "./build",
+  "keywords": [
+    "fastify",
+    "extract",
+    "definitions",
+    "ts",
+    "typescript",
+    "typings",
+    "JSON Schema",
+    "router",
+    "routes"
+  ],
+  "main": "./build/src",
   "repository": "git@github.com:neruchev/fastify-extract-definitions.git",
   "author": "Kirill Neruchev <kirill@neruchev.com>",
   "license": "MIT",
@@ -35,9 +46,6 @@
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5"
   },
-  "files": [
-    "build"
-  ],
   "engines": {
     "node": ">=10.0.0"
   }

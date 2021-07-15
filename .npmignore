@@ -1,0 +1,17 @@
+__tests__/*
+.github/*
+.husky/*
+.vscode/*
+build/__tests__/*
+src/*
+typings/*
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierignore
+.prettierrc
+jest.config.js
+README.md
+tsconfig.json
+yarn-error.log
+yarn.lock
