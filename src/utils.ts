@@ -29,7 +29,7 @@ export const generateEndpointName = (endpoint: string) => {
 
 export const createSchemaObject = (
   title: string | undefined,
-  properties: { [k: string]: JSONSchema4 } | undefined
+  properties: Record<string, JSONSchema4> | undefined
 ): JSONSchema4 => ({
   title,
   type: 'object',
@@ -57,9 +57,11 @@ export const patchCompilerOptions = (
             const text = definitions[key] || definitions[key.slice(1)];
 
             if (!text) {
-              throw new Error(
-                `fastify-extract-definitions: cannot resolve schema for ${file}`
+              const error = new Error(
+                `fastify-extract-definitions: cannot resolve schema for ${file.url}`
               );
+
+              throw error;
             }
 
             return text;
