@@ -2,7 +2,7 @@ import { format, resolveConfig, Options } from 'prettier';
 
 import { CompilerOptions, Result } from './types';
 
-const defaultPrettierOptions: Options = {
+export const defaultPrettierOptions: Options = {
   bracketSpacing: false,
   printWidth: 120,
   semi: true,

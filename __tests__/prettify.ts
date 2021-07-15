@@ -1,6 +1,6 @@
 import { Options } from 'prettier';
 
-import { prettify } from '../src/prettify';
+import { prettify, defaultPrettierOptions } from '../src/prettify';
 
 const cwd = process.cwd();
 
@@ -34,13 +34,7 @@ describe('Prettify output', () => {
 
     expect(result).toEqual({
       parser: 'typescript',
-      bracketSpacing: false,
-      printWidth: 120,
-      semi: true,
-      singleQuote: false,
-      tabWidth: 2,
-      trailingComma: 'none',
-      useTabs: false,
+      ...defaultPrettierOptions,
     });
   });
 });
