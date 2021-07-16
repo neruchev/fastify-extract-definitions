@@ -4,6 +4,7 @@ import { JSONSchema4 } from 'json-schema';
 import {
   createSchemaObject,
   generateEndpointName,
+  normalizeTitle,
   patchCompilerOptions,
 } from '../src/utils';
 import { CompilerOptions } from '../src/types';
@@ -26,6 +27,24 @@ const optionsWithRef: CompilerOptions = {
     resolve: { external: true },
   },
 };
+
+describe('Normalize title', () => {
+  test('If the title is empty, an empty string will be returned', () => {
+    expect(normalizeTitle('')).toBe('');
+  });
+
+  test('If the title is number, normalization working correctly', () => {
+    expect(normalizeTitle('200')).toBe('200');
+  });
+
+  test('If the title contains specific symbols, normalization working correctly', () => {
+    expect(normalizeTitle('foo/bar*&baz')).toBe('FooBarBaz');
+  });
+
+  test('Normalization working correctly', () => {
+    expect(normalizeTitle('foo bar')).toBe('FooBar');
+  });
+});
 
 describe('Generate endpoint name', () => {
   test('Empty endpoint returned "Empty"', () => {

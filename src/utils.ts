@@ -4,6 +4,14 @@ import { CompilerOptions } from './types';
 
 const generated: Record<string, number> = {};
 
+export const normalizeTitle = (title: string) =>
+  title
+    .replace(/[^0-9a-z ]/gi, ' ')
+    .split(' ')
+    .filter((item) => item !== '')
+    .map((item) => item[0].toUpperCase() + item.slice(1))
+    .join('');
+
 export const generateEndpointName = (endpoint: string) => {
   if (!endpoint) {
     return 'Empty';

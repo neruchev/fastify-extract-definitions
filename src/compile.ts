@@ -13,6 +13,7 @@ import {
 import {
   createSchemaObject,
   generateEndpointName,
+  normalizeTitle,
   patchCompilerOptions,
 } from './utils';
 import {
@@ -24,7 +25,7 @@ import {
   Routes,
 } from './types';
 
-const transformResponse = (
+export const transformResponse = (
   title: string,
   properties: Record<string, JSONSchema4>
 ) =>
@@ -33,11 +34,11 @@ const transformResponse = (
 
     return {
       ...item,
-      title: `${title}Status${item.title || key}`,
+      title: `${title}Status${item.title ? normalizeTitle(item.title) : key}`,
     };
   });
 
-const transformSchemaLevel = (
+export const transformSchemaLevel = (
   title: string,
   schema: FastifySchema,
   list: CachedSchemas
@@ -60,7 +61,7 @@ const transformSchemaLevel = (
     return acc;
   }, {});
 
-const transformMethodLevel = (
+export const transformMethodLevel = (
   title: string,
   config: Route,
   handlers: Handlers
@@ -92,7 +93,7 @@ const transformMethodLevel = (
     return acc;
   }, {});
 
-const transformRootLevel = (
+export const transformRootLevel = (
   routes: [route: string, config: Route][],
   handlers: Handlers
 ): JSONSchema4 =>
