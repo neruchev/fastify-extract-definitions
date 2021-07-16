@@ -1,4 +1,4 @@
-import { CachedSchemas, Methods } from './types';
+import { CachedSchemas, Method } from './types';
 
 export const rootName = 'API';
 
@@ -19,7 +19,7 @@ export const bannerImports = `import {
 `;
 
 export const cachedMethods: Record<
-  Methods,
+  Method,
   { capitalized: string; uppercase: string }
 > = {
   delete: { capitalized: 'Delete', uppercase: 'DELETE' },
@@ -43,4 +43,4 @@ export const cachedSchemasWithBody: CachedSchemas = [
   ...cachedSchemas,
 ];
 
-export const methodsWithBody: Methods[] = ['post', 'put', 'patch'];
+export const methodsWithBody: Method[] = ['post', 'put', 'patch'];

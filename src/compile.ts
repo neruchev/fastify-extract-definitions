@@ -20,7 +20,7 @@ import {
   CachedSchemas,
   CompilerOptions,
   Handlers,
-  Methods,
+  Method,
   Route,
   Routes,
 } from './types';
@@ -66,7 +66,7 @@ export const transformMethodLevel = (
   config: Route,
   handlers: Handlers
 ): JSONSchema4 =>
-  (Object.keys(config) as Methods[]).reduce<JSONSchema4>((acc, method) => {
+  (Object.keys(config) as Method[]).reduce<JSONSchema4>((acc, method) => {
     const { uppercase, capitalized } = cachedMethods[method];
 
     const newTitle = rootName + title + capitalized;

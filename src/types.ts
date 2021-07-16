@@ -1,7 +1,7 @@
 import { RouteOptions } from 'fastify';
 import { Options } from 'json-schema-to-typescript';
 
-export type Methods =
+export type Method =
   | 'delete'
   | 'get'
   | 'head'
@@ -13,7 +13,7 @@ export type Methods =
 export type Result = string;
 export type Handlers = string[];
 
-export type Route = { [method in Methods]?: RouteOptions };
+export type Route = { [method in Method]?: RouteOptions };
 export type Routes = Map<string, Route>;
 
 export type CachedSchemas = Array<{ name: string; capitalized: string }>;
