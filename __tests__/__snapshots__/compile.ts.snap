@@ -1,0 +1,936 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform method level Handler definitions are generated successfully 1`] = `
+Array [
+  "export type APIMyTitleDeleteHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIMyTitleDelete
+    >",
+  "export type APIMyTitleGetHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIMyTitleGet
+    >",
+  "export type APIMyTitleHeadHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIMyTitleHead
+    >",
+  "export type APIMyTitleOptionsHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIMyTitleOptions
+    >",
+  "export type APIMyTitlePatchHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIMyTitlePatch
+    >",
+  "export type APIMyTitlePostHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIMyTitlePost
+    >",
+  "export type APIMyTitlePutHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIMyTitlePut
+    >",
+]
+`;
+
+exports[`Transform root level Handler definitions are generated successfully 1`] = `
+Array [
+  "export type APIFooDeleteHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIFooDelete
+    >",
+  "export type APIFooGetHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIFooGet
+    >",
+  "export type APIFooHeadHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIFooHead
+    >",
+  "export type APIFooOptionsHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIFooOptions
+    >",
+  "export type APIFooPatchHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIFooPatch
+    >",
+  "export type APIFooPostHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIFooPost
+    >",
+  "export type APIFooPutHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIFooPut
+    >",
+  "export type APIBarDeleteHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIBarDelete
+    >",
+  "export type APIBarGetHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIBarGet
+    >",
+  "export type APIBarHeadHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIBarHead
+    >",
+  "export type APIBarOptionsHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIBarOptions
+    >",
+  "export type APIBarPatchHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIBarPatch
+    >",
+  "export type APIBarPostHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIBarPost
+    >",
+  "export type APIBarPutHandler = RouteHandlerMethod<
+      RawServerDefault,
+      RawRequestDefaultExpression,
+      RawReplyDefaultExpression,
+      APIBarPut
+    >",
+]
+`;
+
+exports[`Transform root level Transformer works correctly 1`] = `
+Object {
+  "/bar": Object {
+    "additionalProperties": false,
+    "properties": Object {
+      "DELETE": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarDeleteHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarDeleteParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarDeleteQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIBarDeleteReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIBarDeleteReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIBarDelete",
+        "type": "object",
+      },
+      "GET": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarGetHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarGetParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarGetQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIBarGetReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIBarGetReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIBarGet",
+        "type": "object",
+      },
+      "HEAD": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarHeadHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarHeadParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarHeadQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIBarHeadReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIBarHeadReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIBarHead",
+        "type": "object",
+      },
+      "OPTIONS": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarOptionsHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarOptionsParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarOptionsQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIBarOptionsReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIBarOptionsReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIBarOptions",
+        "type": "object",
+      },
+      "PATCH": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Body": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPatchBody",
+            "type": "object",
+          },
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPatchHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPatchParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPatchQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIBarPatchReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIBarPatchReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Body",
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIBarPatch",
+        "type": "object",
+      },
+      "POST": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Body": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPostBody",
+            "type": "object",
+          },
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPostHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPostParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPostQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIBarPostReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIBarPostReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Body",
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIBarPost",
+        "type": "object",
+      },
+      "PUT": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Body": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPutBody",
+            "type": "object",
+          },
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPutHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPutParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIBarPutQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIBarPutReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIBarPutReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Body",
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIBarPut",
+        "type": "object",
+      },
+    },
+    "required": Array [
+      "DELETE",
+      "GET",
+      "HEAD",
+      "OPTIONS",
+      "PATCH",
+      "POST",
+      "PUT",
+    ],
+    "title": undefined,
+    "type": "object",
+  },
+  "/foo": Object {
+    "additionalProperties": false,
+    "properties": Object {
+      "DELETE": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooDeleteHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooDeleteParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooDeleteQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIFooDeleteReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIFooDeleteReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIFooDelete",
+        "type": "object",
+      },
+      "GET": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooGetHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooGetParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooGetQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIFooGetReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIFooGetReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIFooGet",
+        "type": "object",
+      },
+      "HEAD": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooHeadHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooHeadParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooHeadQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIFooHeadReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIFooHeadReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIFooHead",
+        "type": "object",
+      },
+      "OPTIONS": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooOptionsHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooOptionsParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooOptionsQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIFooOptionsReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIFooOptionsReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIFooOptions",
+        "type": "object",
+      },
+      "PATCH": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Body": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPatchBody",
+            "type": "object",
+          },
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPatchHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPatchParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPatchQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIFooPatchReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIFooPatchReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Body",
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIFooPatch",
+        "type": "object",
+      },
+      "POST": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Body": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPostBody",
+            "type": "object",
+          },
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPostHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPostParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPostQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIFooPostReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIFooPostReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Body",
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIFooPost",
+        "type": "object",
+      },
+      "PUT": Object {
+        "additionalProperties": false,
+        "description": undefined,
+        "properties": Object {
+          "Body": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPutBody",
+            "type": "object",
+          },
+          "Headers": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPutHeaders",
+            "type": "object",
+          },
+          "Params": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPutParams",
+            "type": "object",
+          },
+          "Querystring": Object {
+            "additionalProperties": false,
+            "properties": Object {},
+            "required": Array [],
+            "title": "APIFooPutQuerystring",
+            "type": "object",
+          },
+          "Reply": Object {
+            "additionalProperties": false,
+            "oneOf": Array [
+              Object {
+                "additionalProperties": false,
+                "properties": Object {},
+                "required": Array [],
+                "title": "APIFooPutReplyStatus200",
+                "type": "object",
+              },
+            ],
+            "properties": undefined,
+            "required": undefined,
+            "title": "APIFooPutReply",
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "Body",
+          "Querystring",
+          "Params",
+          "Headers",
+          "Reply",
+        ],
+        "title": "APIFooPut",
+        "type": "object",
+      },
+    },
+    "required": Array [
+      "DELETE",
+      "GET",
+      "HEAD",
+      "OPTIONS",
+      "PATCH",
+      "POST",
+      "PUT",
+    ],
+    "title": undefined,
+    "type": "object",
+  },
+}
+`;
