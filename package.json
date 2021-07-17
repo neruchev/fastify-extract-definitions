@@ -14,7 +14,11 @@
     "routes"
   ],
   "main": "./build/src",
+  "homepage": "https://github.com/neruchev/fastify-extract-definitions#readme",
   "repository": "git@github.com:neruchev/fastify-extract-definitions.git",
+  "bugs": {
+    "url": "https://github.com/neruchev/fastify-extract-definitions/issues"
+  },
   "author": "Kirill Neruchev <kirill@neruchev.com>",
   "license": "MIT",
   "private": false,
