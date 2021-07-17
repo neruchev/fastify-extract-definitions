@@ -28,7 +28,7 @@ import {
 export const transformResponse = (
   title: string,
   properties: Record<string, JSONSchema4>
-) =>
+): JSONSchema4[] =>
   Object.keys(properties).map((key) => {
     const item = properties[key];
 
