@@ -1,5 +1,8 @@
 # fastify-extract-definitions
 
+[![NPM version](https://img.shields.io/npm/v/fastify-extract-definitions.svg?style=flat)](https://www.npmjs.com/package/fastify-extract-definitions)
+![CI workflow](https://github.com/neruchev/fastify-extract-definitions/workflows/CI%20workflow/badge.svg)
+
 Automatically extracts TypeScript definitions from [Fastify](https://www.npmjs.com/package/fastify) router schema and generates server and client typings. Based on [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript) package.
 
 ## Pre requirements
@@ -25,7 +28,7 @@ npm install fastify-extract-definitions
 
 Add it to your project with register, pass it some options, and you are done!
 
-⚠️ Note! Use this plugin for development only, make sure it is disabled in production. ⚠
+⚠️ Note! Use this plugin for development only, make sure it is disabled in production.
 
 ```ts
 import Fastify from 'fastify';

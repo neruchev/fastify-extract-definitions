@@ -1,4 +1,4 @@
-name: fastify-extract-definitions
+name: CI workflow
 
 on:
   push:
