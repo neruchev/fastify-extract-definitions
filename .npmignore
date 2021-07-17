@@ -3,6 +3,8 @@ __tests__/*
 .husky/*
 .vscode/*
 build/__tests__/*
+example/*
+node_modules/*
 src/*
 typings/*
 .eslintignore

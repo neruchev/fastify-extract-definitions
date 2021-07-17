@@ -46,7 +46,7 @@ fastify.register(extractor, {
 });
 ```
 
-See [examples](./examples) for more details.
+See [example](./example) for more details.
 
 ## Options
 

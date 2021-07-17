@@ -1,0 +1,18 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "main": "./src",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "yarn run build",
+    "build": "tsc -b",
+    "watch": "tsc-watch --onSuccess \"yarn run start\"",
+    "start": "NODE_PATH=build/ node ./build"
+  },
+  "dependencies": {
+    "fastify": "^3.19.1",
+    "fastify-extract-definitions": "^0.0.1",
+    "tsc-watch": "^4.4.0",
+    "typescript": "^4.3.5"
+  }
+}
