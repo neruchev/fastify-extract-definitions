@@ -25,7 +25,7 @@ npm install fastify-extract-definitions
 
 Add it to your project with register, pass it some options, and you are done!
 
-> Note! Use this plugin for development only, make sure it is disabled in production.
+⚠️ Note! Use this plugin for development only, make sure it is disabled in production. ⚠
 
 ```ts
 import Fastify from 'fastify';
