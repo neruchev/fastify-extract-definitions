@@ -290,10 +290,10 @@ fastify-error@^0.3.0:
   resolved "https://registry.yarnpkg.com/fastify-error/-/fastify-error-0.3.1.tgz#8eb993e15e3cf57f0357fc452af9290f1c1278d2"
   integrity sha512-oCfpcsDndgnDVgiI7bwFKAun2dO+4h84vBlkWsWnz/OUK9Reff5UFoFl241xTiLeHWX/vU9zkDVXqYUxjOwHcQ==
 
-fastify-extract-definitions@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-0.0.1.tgz#f6e67b4170ed3d3af191250fe500d3e45570a71a"
-  integrity sha512-qqBSoceWF2MbDs/Pr6RyxFBJtBsmQySANZcyN7Nj0n4zG+wV7aVL+nCcscyrG6b8aGy1fa1PJaC/tr71Vo9+Og==
+fastify-extract-definitions@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-0.0.2.tgz#0166057d17235dd7a7d600fda21a9dda836a6e9a"
+  integrity sha512-sjyaWYv23Qrzhkv5Oo6dmMghZUrsSg+qpMYNteT+NN5kG3pKA03PFdFqc9nI0JK7VVMJj0uBZuR10JYPo+J44g==
   dependencies:
     fastify-plugin "^3.0.0"
     fastify-routes "^3.0.1"
