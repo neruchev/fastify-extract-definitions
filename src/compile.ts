@@ -16,14 +16,7 @@ import {
   normalizeTitle,
   patchCompilerOptions,
 } from './utils';
-import {
-  CachedSchemas,
-  CompilerOptions,
-  Handlers,
-  Method,
-  Route,
-  Routes,
-} from './types';
+import { CachedSchemas, CompilerOptions, Method, Route, Routes } from './types';
 
 export const transformResponse = (
   title: string,
@@ -63,13 +56,12 @@ export const transformSchemaLevel = (
 
 export const transformMethodLevel = (
   title: string,
-  config: Route,
-  handlers: Handlers
+  config: Route
 ): JSONSchema4 =>
   (Object.keys(config) as Method[]).reduce<JSONSchema4>((acc, method) => {
     const { uppercase, capitalized } = cachedMethods[method];
 
-    const newTitle = rootName + title + capitalized;
+    const newTitle = title + capitalized;
     const schema = config[method]?.schema || {};
 
     const list = methodsWithBody.includes(method)
@@ -77,13 +69,6 @@ export const transformMethodLevel = (
       : cachedSchemas;
 
     const properties = transformSchemaLevel(newTitle, schema, list);
-
-    handlers.push(`export type ${newTitle}Handler = RouteHandlerMethod<
-      RawServerDefault,
-      RawRequestDefaultExpression,
-      RawReplyDefaultExpression,
-      ${newTitle}
-    >`);
 
     acc[uppercase] = {
       ...createSchemaObject(newTitle, properties),
@@ -94,12 +79,11 @@ export const transformMethodLevel = (
   }, {});
 
 export const transformRootLevel = (
-  routes: [route: string, config: Route][],
-  handlers: Handlers
+  routes: [route: string, config: Route][]
 ): JSONSchema4 =>
   routes.reduce<JSONSchema4>((acc, [route, config]) => {
     const title = generateEndpointName(route);
-    const properties = transformMethodLevel(title, config, handlers);
+    const properties = transformMethodLevel(title, config);
 
     acc[route] = createSchemaObject(undefined, properties);
 
@@ -116,17 +100,13 @@ export const compile = async (
     a < b ? -1 : a > b ? 1 : 0
   );
 
-  const handlers: Handlers = [];
-  const properties = transformRootLevel(updatedRoutes, handlers);
+  const properties = transformRootLevel(updatedRoutes);
   const schema = createSchemaObject(rootName, properties);
 
   const text = await compileJson(schema, rootName, options);
 
-  return {
-    text: text
-      .replace(/\}\n\//g, '}\n\n/')
-      .replace(/\}\nexport /g, '}\n\nexport ')
-      .replace(/export type/g, '\nexport type'),
-    handlers: '\n' + handlers.join('\n\n') + '\n',
-  };
+  return text
+    .replace(/\}\n\//g, '}\n\n/')
+    .replace(/\}\nexport /g, '}\n\nexport ')
+    .replace(/export type/g, '\nexport type');
 };

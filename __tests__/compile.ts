@@ -9,7 +9,7 @@ import {
 } from '../src/compile';
 import { createSchemaObject } from '../src/utils';
 import { cachedSchemasWithBody } from '../src/constants';
-import { Route, Handlers } from '../src/types';
+import { Route } from '../src/types';
 
 const properties: Record<string, JSONSchema4> = {
   id: { type: 'string' },
@@ -168,11 +168,11 @@ describe('Transform schema level', () => {
 
 describe('Transform method level', () => {
   test('If the config is empty, an empty object will be returned', () => {
-    expect(transformMethodLevel('MyTitle', {}, [])).toEqual({});
+    expect(transformMethodLevel('MyTitle', {})).toEqual({});
   });
 
   test('Body for all requests except POST, PUT and PATCH will be ignored', () => {
-    const result = transformMethodLevel('MyTitle', schema(''), []);
+    const result = transformMethodLevel('MyTitle', schema(''));
 
     expect(result.DELETE.properties.Body).toBeUndefined();
     expect(result.GET.properties.Body).toBeUndefined();
@@ -185,98 +185,85 @@ describe('Transform method level', () => {
   });
 
   test('Transformer working correctly', () => {
-    expect(transformMethodLevel('MyTitle', schema(''), [])).toEqual({
-      DELETE: createSchemaObject('APIMyTitleDelete', {
-        Querystring: createSchemaObject('APIMyTitleDeleteQuerystring', {}),
-        Params: createSchemaObject('APIMyTitleDeleteParams', {}),
-        Headers: createSchemaObject('APIMyTitleDeleteHeaders', {}),
+    expect(transformMethodLevel('MyTitle', schema(''))).toEqual({
+      DELETE: createSchemaObject('MyTitleDelete', {
+        Querystring: createSchemaObject('MyTitleDeleteQuerystring', {}),
+        Params: createSchemaObject('MyTitleDeleteParams', {}),
+        Headers: createSchemaObject('MyTitleDeleteHeaders', {}),
         Reply: {
-          ...createSchemaObject('APIMyTitleDeleteReply', undefined),
-          oneOf: [createSchemaObject('APIMyTitleDeleteReplyStatus200', {})],
+          ...createSchemaObject('MyTitleDeleteReply', undefined),
+          oneOf: [createSchemaObject('MyTitleDeleteReplyStatus200', {})],
         },
       }),
-      GET: createSchemaObject('APIMyTitleGet', {
-        Querystring: createSchemaObject('APIMyTitleGetQuerystring', {}),
-        Params: createSchemaObject('APIMyTitleGetParams', {}),
-        Headers: createSchemaObject('APIMyTitleGetHeaders', {}),
+      GET: createSchemaObject('MyTitleGet', {
+        Querystring: createSchemaObject('MyTitleGetQuerystring', {}),
+        Params: createSchemaObject('MyTitleGetParams', {}),
+        Headers: createSchemaObject('MyTitleGetHeaders', {}),
         Reply: {
-          ...createSchemaObject('APIMyTitleGetReply', undefined),
-          oneOf: [createSchemaObject('APIMyTitleGetReplyStatus200', {})],
+          ...createSchemaObject('MyTitleGetReply', undefined),
+          oneOf: [createSchemaObject('MyTitleGetReplyStatus200', {})],
         },
       }),
-      HEAD: createSchemaObject('APIMyTitleHead', {
-        Querystring: createSchemaObject('APIMyTitleHeadQuerystring', {}),
-        Params: createSchemaObject('APIMyTitleHeadParams', {}),
-        Headers: createSchemaObject('APIMyTitleHeadHeaders', {}),
+      HEAD: createSchemaObject('MyTitleHead', {
+        Querystring: createSchemaObject('MyTitleHeadQuerystring', {}),
+        Params: createSchemaObject('MyTitleHeadParams', {}),
+        Headers: createSchemaObject('MyTitleHeadHeaders', {}),
         Reply: {
-          ...createSchemaObject('APIMyTitleHeadReply', undefined),
-          oneOf: [createSchemaObject('APIMyTitleHeadReplyStatus200', {})],
+          ...createSchemaObject('MyTitleHeadReply', undefined),
+          oneOf: [createSchemaObject('MyTitleHeadReplyStatus200', {})],
         },
       }),
-      OPTIONS: createSchemaObject('APIMyTitleOptions', {
-        Querystring: createSchemaObject('APIMyTitleOptionsQuerystring', {}),
-        Params: createSchemaObject('APIMyTitleOptionsParams', {}),
-        Headers: createSchemaObject('APIMyTitleOptionsHeaders', {}),
+      OPTIONS: createSchemaObject('MyTitleOptions', {
+        Querystring: createSchemaObject('MyTitleOptionsQuerystring', {}),
+        Params: createSchemaObject('MyTitleOptionsParams', {}),
+        Headers: createSchemaObject('MyTitleOptionsHeaders', {}),
         Reply: {
-          ...createSchemaObject('APIMyTitleOptionsReply', undefined),
-          oneOf: [createSchemaObject('APIMyTitleOptionsReplyStatus200', {})],
+          ...createSchemaObject('MyTitleOptionsReply', undefined),
+          oneOf: [createSchemaObject('MyTitleOptionsReplyStatus200', {})],
         },
       }),
-      PATCH: createSchemaObject('APIMyTitlePatch', {
-        Body: createSchemaObject('APIMyTitlePatchBody', {}),
-        Querystring: createSchemaObject('APIMyTitlePatchQuerystring', {}),
-        Params: createSchemaObject('APIMyTitlePatchParams', {}),
-        Headers: createSchemaObject('APIMyTitlePatchHeaders', {}),
+      PATCH: createSchemaObject('MyTitlePatch', {
+        Body: createSchemaObject('MyTitlePatchBody', {}),
+        Querystring: createSchemaObject('MyTitlePatchQuerystring', {}),
+        Params: createSchemaObject('MyTitlePatchParams', {}),
+        Headers: createSchemaObject('MyTitlePatchHeaders', {}),
         Reply: {
-          ...createSchemaObject('APIMyTitlePatchReply', undefined),
-          oneOf: [createSchemaObject('APIMyTitlePatchReplyStatus200', {})],
+          ...createSchemaObject('MyTitlePatchReply', undefined),
+          oneOf: [createSchemaObject('MyTitlePatchReplyStatus200', {})],
         },
       }),
-      POST: createSchemaObject('APIMyTitlePost', {
-        Body: createSchemaObject('APIMyTitlePostBody', {}),
-        Querystring: createSchemaObject('APIMyTitlePostQuerystring', {}),
-        Params: createSchemaObject('APIMyTitlePostParams', {}),
-        Headers: createSchemaObject('APIMyTitlePostHeaders', {}),
+      POST: createSchemaObject('MyTitlePost', {
+        Body: createSchemaObject('MyTitlePostBody', {}),
+        Querystring: createSchemaObject('MyTitlePostQuerystring', {}),
+        Params: createSchemaObject('MyTitlePostParams', {}),
+        Headers: createSchemaObject('MyTitlePostHeaders', {}),
         Reply: {
-          ...createSchemaObject('APIMyTitlePostReply', undefined),
-          oneOf: [createSchemaObject('APIMyTitlePostReplyStatus200', {})],
+          ...createSchemaObject('MyTitlePostReply', undefined),
+          oneOf: [createSchemaObject('MyTitlePostReplyStatus200', {})],
         },
       }),
-      PUT: createSchemaObject('APIMyTitlePut', {
-        Body: createSchemaObject('APIMyTitlePutBody', {}),
-        Querystring: createSchemaObject('APIMyTitlePutQuerystring', {}),
-        Params: createSchemaObject('APIMyTitlePutParams', {}),
-        Headers: createSchemaObject('APIMyTitlePutHeaders', {}),
+      PUT: createSchemaObject('MyTitlePut', {
+        Body: createSchemaObject('MyTitlePutBody', {}),
+        Querystring: createSchemaObject('MyTitlePutQuerystring', {}),
+        Params: createSchemaObject('MyTitlePutParams', {}),
+        Headers: createSchemaObject('MyTitlePutHeaders', {}),
         Reply: {
-          ...createSchemaObject('APIMyTitlePutReply', undefined),
-          oneOf: [createSchemaObject('APIMyTitlePutReplyStatus200', {})],
+          ...createSchemaObject('MyTitlePutReply', undefined),
+          oneOf: [createSchemaObject('MyTitlePutReplyStatus200', {})],
         },
       }),
     });
   });
-
-  test('Handler definitions are generated successfully', () => {
-    const handlersDefinitions: Handlers = [];
-
-    transformMethodLevel('MyTitle', schema(''), handlersDefinitions);
-    expect(handlersDefinitions).toMatchSnapshot();
-  });
 });
 
 describe('Transform root level', () => {
-  const handlersDefinitions: Handlers = [];
-  const routes: [route: string, config: Route][] = [
-    ['/foo', schema('/foo')],
-    ['/bar', schema('/bar')],
-  ];
-
-  const result = transformRootLevel(routes, handlersDefinitions);
-
   test('Transformer works correctly', () => {
-    expect(result).toMatchSnapshot();
-  });
+    const routes: [route: string, config: Route][] = [
+      ['/foo', schema('/foo')],
+      ['/bar', schema('/bar')],
+    ];
+    const result = transformRootLevel(routes);
 
-  test('Handler definitions are generated successfully', () => {
-    expect(handlersDefinitions).toMatchSnapshot();
+    expect(result).toMatchSnapshot();
   });
 });

@@ -30,7 +30,7 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
     const outputs = Object.keys(options.outputs);
     const baseComment = options.compilerOptions?.bannerComment || bannerComment;
 
-    const [{ text, handlers }, prettier] = await Promise.all([
+    const [text, prettier] = await Promise.all([
       compile(app.routes, definitions, options.compilerOptions),
       prettify(options.compilerOptions),
     ]);
@@ -39,11 +39,9 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
       outputs.map(async (output) => {
         const item = options.outputs[output];
         const isServer = item.target === 'serverTypes';
-
         const banner = baseComment + (isServer ? bannerImports : '');
-        const beHandlers = isServer ? handlers : '';
 
-        const formatted = await prettier(banner + text + beHandlers);
+        const formatted = await prettier(banner + text);
         await save(formatted, output);
       })
     );

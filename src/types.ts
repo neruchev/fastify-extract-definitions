@@ -11,7 +11,6 @@ export type Method =
   | 'put';
 
 export type Result = string;
-export type Handlers = string[];
 
 export type Route = { [method in Method]?: RouteOptions };
 export type Routes = Map<string, Route>;

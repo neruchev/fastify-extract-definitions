@@ -11,11 +11,24 @@ export const bannerComment = `/* tslint:disable */
 `;
 
 export const bannerImports = `import {
+  ContextConfigDefault,
   RawReplyDefaultExpression,
   RawRequestDefaultExpression,
   RawServerDefault,
   RouteHandlerMethod,
-} from 'fastify';\n
+} from 'fastify';
+import { RouteGenericInterface } from 'fastify/types/route';
+
+export type Handler<
+  RouteGeneric extends RouteGenericInterface = RouteGenericInterface,
+  ContextConfig = ContextConfigDefault
+> = RouteHandlerMethod<
+  RawServerDefault,
+  RawRequestDefaultExpression,
+  RawReplyDefaultExpression,
+  RouteGeneric,
+  ContextConfig
+>;\n
 `;
 
 export const cachedMethods: Record<
