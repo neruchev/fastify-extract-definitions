@@ -6,11 +6,11 @@
  */
 
 import {
+  ContextConfigDefault,
   RawReplyDefaultExpression,
   RawRequestDefaultExpression,
   RawServerDefault,
   RouteHandlerMethod,
-  ContextConfigDefault,
 } from 'fastify';
 import { RouteGenericInterface } from 'fastify/types/route';
 

@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "fastify": "^3.19.1",
-    "fastify-extract-definitions": "^0.0.2",
+    "fastify-extract-definitions": "^0.0.3",
     "tsc-watch": "^4.4.0",
     "typescript": "^4.3.5"
   }
