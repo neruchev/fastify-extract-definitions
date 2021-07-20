@@ -77,6 +77,10 @@ describe('Generate endpoint name', () => {
     );
   });
 
+  test('Endpoint with hyphen working correctly', () => {
+    expect(generateEndpointName('/ex-ample')).toBe('ExAmple');
+  });
+
   test('Endpoint with one letter working correctly', () => {
     expect(generateEndpointName('/e')).toBe('E');
   });

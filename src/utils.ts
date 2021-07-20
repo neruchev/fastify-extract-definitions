@@ -19,8 +19,8 @@ export const generateEndpointName = (endpoint: string) => {
 
   const parts = endpoint
     .replace('/*', '/all')
-    .replace(/[^0-9a-z/?&=:]/gi, '')
-    .split(/[/?&=:]+/)
+    .replace(/[^0-9a-z/?&=:-]/gi, '')
+    .split(/[/?&=:-]+/)
     .filter((item) => item !== '')
     .map((item) => item[0].toUpperCase() + item.slice(1));
 
