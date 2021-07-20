@@ -101,7 +101,7 @@ export const compile = async (
   );
 
   const properties = transformRootLevel(updatedRoutes);
-  const schema = createSchemaObject(rootName, properties);
+  const schema = { ...createSchemaObject(rootName, properties), definitions };
 
   const text = await compileJson(schema, rootName, options);
 
