@@ -38,7 +38,7 @@ export const transformSchemaLevel = (
 ): JSONSchema4 =>
   list.reduce<JSONSchema4>((acc, { name, capitalized }) => {
     const properties = (schema as any)[name];
-    const newTitle = title + capitalized;
+    const newTitle = properties?.title || title + capitalized;
 
     if (!properties) {
       acc[capitalized] = {};

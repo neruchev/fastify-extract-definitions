@@ -26,7 +26,7 @@
     "build": "tsc -b",
     "watch": "tsc -b -w",
     "test": "jest",
-    "lint": "eslint . --ext .ts,.tsx --resolve-plugins-relative-to .",
+    "lint": "eslint . --ext .ts",
     "prettier": "prettier --check .",
     "prepare": "husky install"
   },

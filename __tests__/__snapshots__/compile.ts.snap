@@ -1,5 +1,181 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Compile Handle duplicates Compiler with \`unreachableDefinitions\` option working correctly 1`] = `
+"
+export type A1GetParams = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export type Mode = number
+
+export type Mode1 = string
+
+export type Mode2 = string
+
+export type Mode3 = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export interface API {
+\\"/a\\": {
+GET: A1Get
+}
+\\"/b\\": {
+GET: B1Get
+}
+\\"/c\\": {
+GET: C1Get
+}
+\\"/d\\": {
+GET: D1Get
+}
+}
+
+export interface A1Get {
+Querystring: unknown
+Params: A1GetParams
+Headers: unknown
+Reply: unknown
+}
+
+export interface B1Get {
+Querystring: unknown
+Params: Mode
+Headers: unknown
+Reply: unknown
+}
+
+export interface C1Get {
+Querystring: unknown
+Params: Mode1
+Headers: unknown
+Reply: unknown
+}
+
+export interface D1Get {
+Querystring: unknown
+Params: Mode2
+Headers: unknown
+Reply: unknown
+}
+
+/**
+ * This interface was referenced by \`API\`'s JSON-Schema
+ * via the \`definition\` \\"enums\\".
+ */
+export interface Enums {
+mode: Mode3
+}
+"
+`;
+
+exports[`Compile Handle duplicates Compiler working correctly 1`] = `
+"
+export type AGetParams = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export type Mode = number
+
+export type Mode1 = string
+
+export type Mode2 = string
+
+export interface API {
+\\"/a\\": {
+GET: AGet
+}
+\\"/b\\": {
+GET: BGet
+}
+\\"/c\\": {
+GET: CGet
+}
+\\"/d\\": {
+GET: DGet
+}
+}
+
+export interface AGet {
+Querystring: unknown
+Params: AGetParams
+Headers: unknown
+Reply: unknown
+}
+
+export interface BGet {
+Querystring: unknown
+Params: Mode
+Headers: unknown
+Reply: unknown
+}
+
+export interface CGet {
+Querystring: unknown
+Params: Mode1
+Headers: unknown
+Reply: unknown
+}
+
+export interface DGet {
+Querystring: unknown
+Params: Mode2
+Headers: unknown
+Reply: unknown
+}
+"
+`;
+
+exports[`Compile Handle refs Compiler with \`unreachableDefinitions\` option working correctly 1`] = `
+"
+export type RootGetParams = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export type RootGetReply = RootGetReplyStatus200
+
+export type RootGetReplyStatus200 = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export type Mode = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export interface API {
+\\"/\\": {
+GET: RootGet
+}
+}
+
+export interface RootGet {
+Querystring: unknown
+Params: RootGetParams
+Headers: unknown
+Reply: RootGetReply
+}
+
+/**
+ * This interface was referenced by \`API\`'s JSON-Schema
+ * via the \`definition\` \\"enums\\".
+ */
+export interface Enums {
+mode: Mode
+}
+"
+`;
+
+exports[`Compile Handle refs Compiler working correctly 1`] = `
+"
+export type RootGetParams = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export type RootGetReply = RootGetReplyStatus200
+
+export type RootGetReplyStatus200 = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+
+export interface API {
+\\"/\\": {
+GET: RootGet
+}
+}
+
+export interface RootGet {
+Querystring: unknown
+Params: RootGetParams
+Headers: unknown
+Reply: RootGetReply
+}
+"
+`;
+
 exports[`Transform root level Transformer works correctly 1`] = `
 Object {
   "/bar": Object {

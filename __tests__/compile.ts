@@ -2,6 +2,7 @@ import { RouteOptions, HTTPMethods } from 'fastify';
 import { JSONSchema4 } from 'json-schema';
 
 import {
+  compile,
   transformMethodLevel,
   transformResponse,
   transformRootLevel,
@@ -90,33 +91,6 @@ describe('Transform schema level', () => {
     });
   });
 
-  test('All field titles except the Response will be ignored', () => {
-    const schema = transformSchemaLevel(
-      'MyTitle',
-      {
-        body: createSchemaObject('Custom title 1', {}),
-        querystring: createSchemaObject('Custom title 2', {}),
-        params: createSchemaObject('Custom title 3', {}),
-        headers: createSchemaObject('Custom title 4', {}),
-        response: {
-          200: createSchemaObject('Custom title 5', {}),
-        },
-      },
-      cachedSchemasWithBody
-    );
-
-    expect(schema).toEqual({
-      Body: createSchemaObject('MyTitleBody', {}),
-      Headers: createSchemaObject('MyTitleHeaders', {}),
-      Params: createSchemaObject('MyTitleParams', {}),
-      Querystring: createSchemaObject('MyTitleQuerystring', {}),
-      Reply: {
-        ...createSchemaObject('MyTitleReply', undefined),
-        oneOf: [createSchemaObject('MyTitleReplyStatusCustomTitle5', {})],
-      },
-    });
-  });
-
   test('Response transformed correctly', () => {
     const schema = transformSchemaLevel(
       'CustomTitle',
@@ -157,10 +131,10 @@ describe('Transform schema level', () => {
     );
 
     expect(schema).toEqual({
-      Body: createSchemaObject('MyTitleBody', properties),
-      Headers: createSchemaObject('MyTitleHeaders', properties),
-      Params: createSchemaObject('MyTitleParams', properties),
-      Querystring: createSchemaObject('MyTitleQuerystring', properties),
+      Body: createSchemaObject('Custom title 1', properties),
+      Headers: createSchemaObject('Custom title 4', properties),
+      Params: createSchemaObject('Custom title 3', properties),
+      Querystring: createSchemaObject('Custom title 2', properties),
       Reply: {},
     });
   });
@@ -265,5 +239,118 @@ describe('Transform root level', () => {
     const result = transformRootLevel(routes);
 
     expect(result).toMatchSnapshot();
+  });
+});
+
+describe('Compile', () => {
+  const definitions = {
+    enums: {
+      $id: 'enums',
+      type: 'object',
+      title: 'enums',
+      required: ['mode'],
+      properties: {
+        mode: {
+          title: 'Mode',
+          type: 'string',
+          enum: ['production', 'staging', 'development', 'test'],
+        },
+      },
+      additionalProperties: false,
+    },
+  };
+
+  describe('Handle refs', () => {
+    const routes = new Map<string, Route>();
+
+    routes.set('/', {
+      get: {
+        url: '/',
+        method: 'GET',
+        handler: console.log,
+        schema: {
+          params: { $ref: 'enums#/properties/mode' },
+          response: {
+            200: { $ref: 'enums#/properties/mode' },
+          },
+        },
+      },
+    });
+
+    test('Compiler working correctly', async () => {
+      const result = await compile(routes, definitions);
+
+      expect(result).toMatchSnapshot();
+    });
+
+    test('Compiler with `unreachableDefinitions` option working correctly', async () => {
+      const result = await compile(routes, definitions, {
+        unreachableDefinitions: true,
+      });
+
+      expect(result).toMatchSnapshot();
+    });
+  });
+
+  describe('Handle duplicates', () => {
+    const routes = new Map<string, Route>();
+
+    routes.set('/a', {
+      get: {
+        url: '/a',
+        method: 'GET',
+        handler: console.log,
+        schema: {
+          params: { $ref: 'enums#/properties/mode' },
+        },
+      },
+    });
+
+    routes.set('/b', {
+      get: {
+        url: '/b',
+        method: 'GET',
+        handler: console.log,
+        schema: {
+          params: { title: 'Mode', type: 'number' },
+        },
+      },
+    });
+
+    routes.set('/c', {
+      get: {
+        url: '/c',
+        method: 'GET',
+        handler: console.log,
+        schema: {
+          params: { title: 'Mode', type: 'string' },
+        },
+      },
+    });
+
+    routes.set('/d', {
+      get: {
+        url: '/d',
+        method: 'GET',
+        handler: console.log,
+        schema: {
+          params: { title: 'Mode', type: 'string' },
+        },
+      },
+    });
+
+    test('Compiler working correctly', async () => {
+      const result = await compile(routes, definitions);
+
+      expect(result).toMatchSnapshot();
+    });
+
+    test('Compiler with `unreachableDefinitions` option working correctly', async () => {
+      const result = await compile(routes, definitions, {
+        unreachableDefinitions: true,
+      });
+
+      expect(result).toMatchSnapshot();
+    });
   });
 });
