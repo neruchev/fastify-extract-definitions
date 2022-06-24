@@ -1,9 +1,8 @@
-name: CI workflow
+name: Tests
 
 on:
   push:
     branches:
-      - main
       - develop
   pull_request:
     branches:
@@ -11,15 +10,15 @@ on:
       - develop
 
 jobs:
-  validate_code:
-    name: Validate code
+  test:
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies
         run: yarn install
