@@ -32,15 +32,15 @@ const config = (route: string, method: HTTPMethods): RouteOptions => ({
   },
 });
 
-const schema = (route: string): Route => ({
-  delete: config(route, 'DELETE'),
-  get: config(route, 'GET'),
-  head: config(route, 'HEAD'),
-  options: config(route, 'OPTIONS'),
-  patch: config(route, 'PATCH'),
-  post: config(route, 'POST'),
-  put: config(route, 'PUT'),
-});
+const schema = (route: string): Route => [
+  config(route, 'DELETE'),
+  config(route, 'GET'),
+  config(route, 'HEAD'),
+  config(route, 'OPTIONS'),
+  config(route, 'PATCH'),
+  config(route, 'POST'),
+  config(route, 'PUT'),
+];
 
 describe('Transform response', () => {
   test('Response without title transformed correctly', () => {
@@ -142,7 +142,7 @@ describe('Transform schema level', () => {
 
 describe('Transform method level', () => {
   test('If the config is empty, an empty object will be returned', () => {
-    expect(transformMethodLevel('MyTitle', {})).toEqual({});
+    expect(transformMethodLevel('MyTitle', [])).toEqual({});
   });
 
   test('Body for all requests except POST, PUT and PATCH will be ignored', () => {
@@ -263,8 +263,8 @@ describe('Compile', () => {
   describe('Handle refs', () => {
     const routes = new Map<string, Route>();
 
-    routes.set('/', {
-      get: {
+    routes.set('/', [
+      {
         url: '/',
         method: 'GET',
         handler: console.log,
@@ -275,7 +275,7 @@ describe('Compile', () => {
           },
         },
       },
-    });
+    ]);
 
     test('Compiler working correctly', async () => {
       const result = await compile(routes, definitions);
@@ -295,8 +295,8 @@ describe('Compile', () => {
   describe('Handle duplicates', () => {
     const routes = new Map<string, Route>();
 
-    routes.set('/a', {
-      get: {
+    routes.set('/a', [
+      {
         url: '/a',
         method: 'GET',
         handler: console.log,
@@ -304,10 +304,10 @@ describe('Compile', () => {
           params: { $ref: 'enums#/properties/mode' },
         },
       },
-    });
+    ]);
 
-    routes.set('/b', {
-      get: {
+    routes.set('/b', [
+      {
         url: '/b',
         method: 'GET',
         handler: console.log,
@@ -315,10 +315,10 @@ describe('Compile', () => {
           params: { title: 'Mode', type: 'number' },
         },
       },
-    });
+    ]);
 
-    routes.set('/c', {
-      get: {
+    routes.set('/c', [
+      {
         url: '/c',
         method: 'GET',
         handler: console.log,
@@ -326,10 +326,10 @@ describe('Compile', () => {
           params: { title: 'Mode', type: 'string' },
         },
       },
-    });
+    ]);
 
-    routes.set('/d', {
-      get: {
+    routes.set('/d', [
+      {
         url: '/d',
         method: 'GET',
         handler: console.log,
@@ -337,7 +337,7 @@ describe('Compile', () => {
           params: { title: 'Mode', type: 'string' },
         },
       },
-    });
+    ]);
 
     test('Compiler working correctly', async () => {
       const result = await compile(routes, definitions);

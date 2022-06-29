@@ -1,19 +1,11 @@
 import { RouteOptions } from 'fastify';
 import { Options } from 'json-schema-to-typescript';
-
-export type Method =
-  | 'delete'
-  | 'get'
-  | 'head'
-  | 'options'
-  | 'patch'
-  | 'post'
-  | 'put';
+import { FastifyRoutes } from '@fastify/routes';
 
 export type Result = string;
 
-export type Route = { [method in Method]?: RouteOptions };
-export type Routes = Map<string, Route>;
+export type Route = RouteOptions[];
+export type Routes = FastifyRoutes;
 
 export type CachedSchemas = Array<{ name: string; capitalized: string }>;
 export type CompilerOptions = Partial<Options>;

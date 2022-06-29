@@ -5,6 +5,8 @@
 
 Automatically extracts TypeScript definitions from [Fastify](https://www.npmjs.com/package/fastify) router schema and generates server and client typings. Based on [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript) package.
 
+For `fastify@3` use `fastify-extract-definitions@0.0.4`.
+
 ## Pre requirements
 
 - `node.js`: `>=10.*`

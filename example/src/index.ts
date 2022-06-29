@@ -35,10 +35,12 @@ fastify.register(extractor, {
   },
 });
 
-fastify.get<RootGet>('/', root.options, root.handler);
-fastify.get<FooBarGet>('/foo/:bar', foo.options, foo.handler);
+fastify.register(async (fastify) => {
+  fastify.get<RootGet>('/', root.options, root.handler);
+  fastify.get<FooBarGet>('/foo/:bar', foo.options, foo.handler);
+});
 
-fastify.listen(8000, 'localhost', (err, address) => {
+fastify.listen({ port: 8000, host: 'localhost' }, (err, address) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
