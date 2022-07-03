@@ -1,4 +1,6 @@
-import { CachedSchemas, Method } from './types';
+import { HTTPMethods } from 'fastify';
+
+import { CachedSchemas } from './types';
 
 export const rootName = 'API';
 
@@ -31,17 +33,14 @@ export type Handler<
 >;\n
 `;
 
-export const cachedMethods: Record<
-  Method,
-  { capitalized: string; uppercase: string }
-> = {
-  delete: { capitalized: 'Delete', uppercase: 'DELETE' },
-  get: { capitalized: 'Get', uppercase: 'GET' },
-  head: { capitalized: 'Head', uppercase: 'HEAD' },
-  options: { capitalized: 'Options', uppercase: 'OPTIONS' },
-  patch: { capitalized: 'Patch', uppercase: 'PATCH' },
-  post: { capitalized: 'Post', uppercase: 'POST' },
-  put: { capitalized: 'Put', uppercase: 'PUT' },
+export const cachedMethods: Record<HTTPMethods, { capitalized: string }> = {
+  DELETE: { capitalized: 'Delete' },
+  GET: { capitalized: 'Get' },
+  HEAD: { capitalized: 'Head' },
+  OPTIONS: { capitalized: 'Options' },
+  PATCH: { capitalized: 'Patch' },
+  POST: { capitalized: 'Post' },
+  PUT: { capitalized: 'Put' },
 };
 
 export const cachedSchemas: CachedSchemas = [
@@ -56,4 +55,4 @@ export const cachedSchemasWithBody: CachedSchemas = [
   ...cachedSchemas,
 ];
 
-export const methodsWithBody: Method[] = ['post', 'put', 'patch'];
+export const methodsWithBody: HTTPMethods[] = ['POST', 'PUT', 'PATCH'];

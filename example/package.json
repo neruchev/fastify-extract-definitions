@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "main": "./src",
   "license": "MIT",
   "scripts": {
@@ -10,9 +10,9 @@
     "start": "NODE_PATH=build/ node ./build"
   },
   "dependencies": {
-    "fastify": "^3.19.1",
-    "fastify-extract-definitions": "^0.0.4",
-    "tsc-watch": "^4.4.0",
-    "typescript": "^4.3.5"
+    "fastify": "^4.2.0",
+    "fastify-extract-definitions": "^1.0.0",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.7.4"
   }
 }

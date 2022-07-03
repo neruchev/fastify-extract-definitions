@@ -16,7 +16,7 @@ import {
   normalizeTitle,
   patchCompilerOptions,
 } from './utils';
-import { CachedSchemas, CompilerOptions, Method, Route, Routes } from './types';
+import { CachedSchemas, CompilerOptions, Route, Routes } from './types';
 
 export const transformResponse = (
   title: string,
@@ -38,7 +38,7 @@ export const transformSchemaLevel = (
 ): JSONSchema4 =>
   list.reduce<JSONSchema4>((acc, { name, capitalized }) => {
     const properties = (schema as any)[name];
-    const newTitle = title + capitalized;
+    const newTitle = properties?.title || title + capitalized;
 
     if (!properties) {
       acc[capitalized] = {};
@@ -58,22 +58,27 @@ export const transformMethodLevel = (
   title: string,
   config: Route
 ): JSONSchema4 =>
-  (Object.keys(config) as Method[]).reduce<JSONSchema4>((acc, method) => {
-    const { uppercase, capitalized } = cachedMethods[method];
+  config.reduce<JSONSchema4>((acc, record) => {
+    const methods =
+      typeof record.method === 'string' ? [record.method] : record.method;
 
-    const newTitle = title + capitalized;
-    const schema = config[method]?.schema || {};
+    methods.forEach((method) => {
+      const { capitalized } = cachedMethods[method];
 
-    const list = methodsWithBody.includes(method)
-      ? cachedSchemasWithBody
-      : cachedSchemas;
+      const newTitle = title + capitalized;
+      const schema = record.schema || {};
 
-    const properties = transformSchemaLevel(newTitle, schema, list);
+      const list = methodsWithBody.includes(method)
+        ? cachedSchemasWithBody
+        : cachedSchemas;
 
-    acc[uppercase] = {
-      ...createSchemaObject(newTitle, properties),
-      description: (schema as any).description, // hack for fastify-swagger
-    };
+      const properties = transformSchemaLevel(newTitle, schema, list);
+
+      acc[method] = {
+        ...createSchemaObject(newTitle, properties),
+        description: (schema as any).description, // hack for @fastify/swagger
+      };
+    });
 
     return acc;
   }, {});

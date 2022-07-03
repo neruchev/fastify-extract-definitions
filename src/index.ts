@@ -1,6 +1,6 @@
 import { FastifyPluginCallback } from 'fastify';
 import fastifyPlugin from 'fastify-plugin';
-import fastifyRoutes from 'fastify-routes';
+import fastifyRoutes from '@fastify/routes';
 
 import { compile } from './compile';
 import { prettify } from './prettify';
@@ -23,8 +23,7 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
   fastify.register(fastifyRoutes);
 
   fastify.addHook('onReady', async () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const app = fastify as any;
+    const app = fastify;
     const definitions = app.getSchemas();
 
     const outputs = Object.keys(options.outputs);
@@ -51,6 +50,6 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
 };
 
 export default fastifyPlugin(plugin, {
-  fastify: '>=3.x',
+  fastify: '4.x',
   name: 'fastify-extract-definitions',
 });
