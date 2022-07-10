@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "main": "./src",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "fastify": "^4.2.0",
-    "fastify-extract-definitions": "^1.2.0",
+    "fastify-extract-definitions": "^1.3.0",
     "tsc-watch": "^5.0.3",
     "typescript": "^4.7.4"
   }

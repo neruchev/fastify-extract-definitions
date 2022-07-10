@@ -124,9 +124,7 @@ exports[`Compile Handle refs Compiler with \`unreachableDefinitions\` option wor
 "
 export type RootGetParams = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
 
-export type RootGetReply = RootGetReplyStatus200
-
-export type RootGetReplyStatus200 = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+export type RootGetReply = Mode
 
 export type Mode = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
 
@@ -157,9 +155,9 @@ exports[`Compile Handle refs Compiler working correctly 1`] = `
 "
 export type RootGetParams = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
 
-export type RootGetReply = RootGetReplyStatus200
+export type RootGetReply = Mode
 
-export type RootGetReplyStatus200 = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
+export type Mode = (\\"production\\" | \\"staging\\" | \\"development\\" | \\"test\\")
 
 export interface API {
 \\"/\\": {

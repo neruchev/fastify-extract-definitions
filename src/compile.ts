@@ -25,6 +25,10 @@ export const transformResponse = (
   Object.keys(properties).map((key) => {
     const item = properties[key];
 
+    if (item['$ref']) {
+      return item;
+    }
+
     return {
       ...item,
       title: `${title}Status${item.title ? normalizeTitle(item.title) : key}`,
