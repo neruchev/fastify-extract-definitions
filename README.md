@@ -55,8 +55,10 @@ See [example](./example) for more details.
 | key             | type    | default                                                                                                          | description                                                                                          |
 | --------------- | ------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | enabled         | boolean | `false`                                                                                                          | Is the plugin enabled?                                                                               |
+| ignoreHead      | boolean | `false`                                                                                                          | Ignore HEAD endpoints                                                                                |
 | outputs         | object  | `{}`                                                                                                             | Outputs config                                                                                       |
 | compilerOptions | object  | See [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript#options) default options | [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript#options) options |
+|                 |
 
 ### Outputs config
 

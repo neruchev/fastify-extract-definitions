@@ -28,6 +28,7 @@ fastify.addSchema({
 
 fastify.register(extractor, {
   enabled: NODE_ENV === 'development',
+  ignoreHead: true,
   outputs: {
     './src/types.ts': {
       target: 'serverTypes',

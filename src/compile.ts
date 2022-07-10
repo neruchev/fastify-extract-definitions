@@ -56,39 +56,43 @@ export const transformSchemaLevel = (
 
 export const transformMethodLevel = (
   title: string,
-  config: Route
+  config: Route,
+  ignoreHead: boolean
 ): JSONSchema4 =>
   config.reduce<JSONSchema4>((acc, record) => {
     const methods =
       typeof record.method === 'string' ? [record.method] : record.method;
 
     methods.forEach((method) => {
-      const { capitalized } = cachedMethods[method];
+      if (!ignoreHead || method !== 'HEAD') {
+        const { capitalized } = cachedMethods[method];
 
-      const newTitle = title + capitalized;
-      const schema = record.schema || {};
+        const newTitle = title + capitalized;
+        const schema = record.schema || {};
 
-      const list = methodsWithBody.includes(method)
-        ? cachedSchemasWithBody
-        : cachedSchemas;
+        const list = methodsWithBody.includes(method)
+          ? cachedSchemasWithBody
+          : cachedSchemas;
 
-      const properties = transformSchemaLevel(newTitle, schema, list);
+        const properties = transformSchemaLevel(newTitle, schema, list);
 
-      acc[method] = {
-        ...createSchemaObject(newTitle, properties),
-        description: (schema as any).description, // hack for @fastify/swagger
-      };
+        acc[method] = {
+          ...createSchemaObject(newTitle, properties),
+          description: (schema as any).description, // hack for @fastify/swagger
+        };
+      }
     });
 
     return acc;
   }, {});
 
 export const transformRootLevel = (
-  routes: [route: string, config: Route][]
+  routes: [route: string, config: Route][],
+  ignoreHead: boolean
 ): JSONSchema4 =>
   routes.reduce<JSONSchema4>((acc, [route, config]) => {
     const title = generateEndpointName(route);
-    const properties = transformMethodLevel(title, config);
+    const properties = transformMethodLevel(title, config, ignoreHead);
 
     acc[route] = createSchemaObject(undefined, properties);
 
@@ -98,6 +102,7 @@ export const transformRootLevel = (
 export const compile = async (
   routes: Routes,
   definitions: JSONSchema4,
+  ignoreHead: boolean,
   compilerOptions: CompilerOptions = {}
 ) => {
   const options = patchCompilerOptions(compilerOptions, definitions);
@@ -105,7 +110,7 @@ export const compile = async (
     a < b ? -1 : a > b ? 1 : 0
   );
 
-  const properties = transformRootLevel(updatedRoutes);
+  const properties = transformRootLevel(updatedRoutes, ignoreHead);
   const schema = { ...createSchemaObject(rootName, properties), definitions };
 
   const text = await compileJson(schema, rootName, options);

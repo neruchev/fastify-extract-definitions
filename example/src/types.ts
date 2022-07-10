@@ -78,24 +78,16 @@ export type RootGetReply = RootGetReplyStatus200;
 
 export type MODE = 'production' | 'development' | 'test';
 
-export type RootHeadReply = RootHeadReplyStatus200;
-
 export type FooBarGetReply = FooBarGetReplyStatus200;
 
 export type FooBarGetReplyStatus200 = string;
 
-export type FooBarHeadReply = FooBarHeadReplyStatus200;
-
-export type FooBarHeadReplyStatus200 = string;
-
 export interface API {
   '/': {
     GET: RootGet;
-    HEAD: RootHead;
   };
   '/foo/:bar': {
     GET: FooBarGet;
-    HEAD: FooBarHead;
   };
 }
 
@@ -112,19 +104,6 @@ export interface RootGetReplyStatus200 {
   mode: MODE;
 }
 
-export interface RootHead {
-  Querystring: unknown;
-  Params: unknown;
-  Headers: unknown;
-  Reply: RootHeadReply;
-}
-
-export interface RootHeadReplyStatus200 {
-  version: string;
-  name: string;
-  mode: MODE;
-}
-
 export interface FooBarGet {
   Querystring: unknown;
   Params: FooBarGetParams;
@@ -133,16 +112,5 @@ export interface FooBarGet {
 }
 
 export interface FooBarGetParams {
-  bar: string;
-}
-
-export interface FooBarHead {
-  Querystring: unknown;
-  Params: FooBarHeadParams;
-  Headers: unknown;
-  Reply: FooBarHeadReply;
-}
-
-export interface FooBarHeadParams {
   bar: string;
 }

@@ -10,7 +10,8 @@ export type Routes = FastifyRoutes;
 export type CachedSchemas = Array<{ name: string; capitalized: string }>;
 export type CompilerOptions = Partial<Options>;
 export type ExtractorOptions = {
-  enabled: boolean;
+  enabled?: boolean;
+  ignoreHead?: boolean;
   outputs: {
     [filePath: string]: {
       target: 'serverTypes' | 'clientTypes';

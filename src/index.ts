@@ -30,7 +30,12 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
     const baseComment = options.compilerOptions?.bannerComment || bannerComment;
 
     const [text, prettier] = await Promise.all([
-      compile(app.routes, definitions, options.compilerOptions),
+      compile(
+        app.routes,
+        definitions,
+        options.ignoreHead ?? false,
+        options.compilerOptions
+      ),
       prettify(options.compilerOptions),
     ]);
 
