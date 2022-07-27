@@ -48,8 +48,8 @@ export type RouteHandlerMethod<
     SchemaCompiler,
     TypeProvider,
     ContextConfig,
-    RequestType,
-    Logger
+    Logger,
+    RequestType
   >,
   reply: FastifyReply<
     RawServer,
