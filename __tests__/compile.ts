@@ -82,13 +82,7 @@ describe('Transform schema level', () => {
       cachedSchemasWithBody
     );
 
-    expect(schema).toEqual({
-      Body: {},
-      Querystring: {},
-      Params: {},
-      Headers: {},
-      Reply: {},
-    });
+    expect(schema).toEqual({});
   });
 
   test('Response transformed correctly', () => {
@@ -104,10 +98,6 @@ describe('Transform schema level', () => {
     );
 
     expect(schema).toEqual({
-      Body: {},
-      Querystring: {},
-      Params: {},
-      Headers: {},
       Reply: {
         ...createSchemaObject('CustomTitleReply', undefined),
         oneOf: [
@@ -135,7 +125,6 @@ describe('Transform schema level', () => {
       Headers: createSchemaObject('Custom title 4', properties),
       Params: createSchemaObject('Custom title 3', properties),
       Querystring: createSchemaObject('Custom title 2', properties),
-      Reply: {},
     });
   });
 });

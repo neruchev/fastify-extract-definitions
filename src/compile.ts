@@ -44,15 +44,14 @@ export const transformSchemaLevel = (
     const properties = (schema as any)[name];
     const newTitle = properties?.title || title + capitalized;
 
-    if (!properties) {
-      acc[capitalized] = {};
-    } else if (name === 'response') {
-      acc[capitalized] = {
-        ...createSchemaObject(newTitle, undefined),
-        oneOf: transformResponse(newTitle, properties),
-      };
-    } else {
-      acc[capitalized] = { ...properties, title: newTitle };
+    if (properties) {
+      acc[capitalized] =
+        name === 'response'
+          ? {
+              ...createSchemaObject(newTitle, undefined),
+              oneOf: transformResponse(newTitle, properties),
+            }
+          : { ...properties, title: newTitle };
     }
 
     return acc;

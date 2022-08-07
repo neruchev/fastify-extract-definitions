@@ -310,10 +310,10 @@ fast-uri@^2.0.0, fast-uri@^2.1.0:
   resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-2.1.0.tgz#9279432d6b53675c90116b947ed2bbba582d6fb5"
   integrity sha512-qKRta6N7BWEFVlyonVY/V+BMLgFqktCUV0QjT259ekAIlbVrMaFnFLxJ4s/JPl4tou56S1BzPufI60bLe29fHA==
 
-fastify-extract-definitions@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-2.0.1.tgz#b8c8850672de1ea8dec3e6b33e1b41eadd31662b"
-  integrity sha512-V1+t/ptvbA8Jfy+HZ+gYfLQ912qxc7xqyfGXtjGGFVue9Ux+V5jCzrpv4COcUGv5MS6G9BEKJMB8aUKt0HM5YQ==
+fastify-extract-definitions@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-2.1.1.tgz#7b4d739864953b5821cfa06d6c50c9e8ea0f97c8"
+  integrity sha512-Aj5/CwtLl+VR4o33QdgFd9Vu9S+92tDb0CM+ssD3RvZeJJKFWV6P0L6HeWa+SuvGZrtVb2t0dlS4wHGjuVU39g==
   dependencies:
     "@fastify/routes" "^5.0.0"
     fastify-plugin "^4.0.0"

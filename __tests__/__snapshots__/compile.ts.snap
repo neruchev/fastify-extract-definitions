@@ -28,31 +28,19 @@ GET: D1Get
 }
 
 export interface A1Get {
-Querystring: unknown
 Params: A1GetParams
-Headers: unknown
-Reply: unknown
 }
 
 export interface B1Get {
-Querystring: unknown
 Params: Mode
-Headers: unknown
-Reply: unknown
 }
 
 export interface C1Get {
-Querystring: unknown
 Params: Mode1
-Headers: unknown
-Reply: unknown
 }
 
 export interface D1Get {
-Querystring: unknown
 Params: Mode2
-Headers: unknown
-Reply: unknown
 }
 
 /**
@@ -91,31 +79,19 @@ GET: DGet
 }
 
 export interface AGet {
-Querystring: unknown
 Params: AGetParams
-Headers: unknown
-Reply: unknown
 }
 
 export interface BGet {
-Querystring: unknown
 Params: Mode
-Headers: unknown
-Reply: unknown
 }
 
 export interface CGet {
-Querystring: unknown
 Params: Mode1
-Headers: unknown
-Reply: unknown
 }
 
 export interface DGet {
-Querystring: unknown
 Params: Mode2
-Headers: unknown
-Reply: unknown
 }
 "
 `;
@@ -135,9 +111,7 @@ GET: RootGet
 }
 
 export interface RootGet {
-Querystring: unknown
 Params: RootGetParams
-Headers: unknown
 Reply: RootGetReply
 }
 
@@ -166,9 +140,7 @@ GET: RootGet
 }
 
 export interface RootGet {
-Querystring: unknown
 Params: RootGetParams
-Headers: unknown
 Reply: RootGetReply
 }
 "

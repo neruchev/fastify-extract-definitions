@@ -92,9 +92,6 @@ export interface API {
 }
 
 export interface RootGet {
-  Querystring: unknown;
-  Params: unknown;
-  Headers: unknown;
   Reply: RootGetReply;
 }
 
@@ -105,9 +102,7 @@ export interface RootGetReplyStatus200 {
 }
 
 export interface FooBarGet {
-  Querystring: unknown;
   Params: FooBarGetParams;
-  Headers: unknown;
   Reply: FooBarGetReply;
 }
 
