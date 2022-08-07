@@ -39,8 +39,8 @@ export const transformSchemaLevel = (
   title: string,
   schema: FastifySchema,
   list: CachedSchemas
-): JSONSchema4 =>
-  list.reduce<JSONSchema4>((acc, { name, capitalized }) => {
+): JSONSchema4 | undefined => {
+  const result = list.reduce<JSONSchema4>((acc, { name, capitalized }) => {
     const properties = (schema as any)[name];
     const newTitle = properties?.title || title + capitalized;
 
@@ -56,6 +56,9 @@ export const transformSchemaLevel = (
 
     return acc;
   }, {});
+
+  return Object.keys(result).length ? result : undefined;
+};
 
 export const transformMethodLevel = (
   title: string,

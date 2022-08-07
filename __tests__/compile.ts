@@ -82,7 +82,7 @@ describe('Transform schema level', () => {
       cachedSchemasWithBody
     );
 
-    expect(schema).toEqual({});
+    expect(schema).toBeUndefined();
   });
 
   test('Response transformed correctly', () => {

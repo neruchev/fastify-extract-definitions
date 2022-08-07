@@ -1,6 +1,6 @@
 {
   "name": "fastify-extract-definitions",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Retrieves TypeScript definitions from Fastify router schema",
   "keywords": [
     "fastify",
