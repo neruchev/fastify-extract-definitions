@@ -29,7 +29,6 @@ import { FastifyReply } from 'fastify/types/reply';
 import { RouteGenericInterface } from 'fastify/types/route';
 import {
   FastifyRequestType,
-  ResolveFastifyReplyReturnType,
   ResolveFastifyRequestType,
 } from 'fastify/types/type-provider';
 
@@ -69,7 +68,7 @@ export type RouteHandlerMethod<
     TypeProvider,
     RouteGeneric['Reply']
   >
-) => ResolveFastifyReplyReturnType<TypeProvider, SchemaCompiler, RouteGeneric>;
+) => Promise<RouteGeneric['Reply']> | RouteGeneric['Reply'] | void;
 
 export type Handler<
   RouteGeneric extends RouteGenericInterface = RouteGenericInterface,
