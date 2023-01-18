@@ -4,6 +4,9 @@ import { CompilerOptions } from './types';
 
 const generated: Record<string, number> = {};
 
+export const capitalize = (str: string) =>
+  (str[0] ?? '').toUpperCase() + str.substring(1).toLowerCase();
+
 export const normalizeTitle = (title: string) =>
   title
     .replace(/[^0-9a-z ]/gi, ' ')

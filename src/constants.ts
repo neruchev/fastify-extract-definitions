@@ -82,16 +82,6 @@ export type Handler<
 >;\n
 `;
 
-export const cachedMethods: Record<HTTPMethods, { capitalized: string }> = {
-  DELETE: { capitalized: 'Delete' },
-  GET: { capitalized: 'Get' },
-  HEAD: { capitalized: 'Head' },
-  OPTIONS: { capitalized: 'Options' },
-  PATCH: { capitalized: 'Patch' },
-  POST: { capitalized: 'Post' },
-  PUT: { capitalized: 'Put' },
-};
-
 export const cachedSchemas: CachedSchemas = [
   { name: 'querystring', capitalized: 'Querystring' },
   { name: 'params', capitalized: 'Params' },

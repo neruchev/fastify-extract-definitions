@@ -2,6 +2,7 @@
 import { JSONSchema4 } from 'json-schema';
 
 import {
+  capitalize,
   createSchemaObject,
   generateEndpointName,
   normalizeTitle,
@@ -27,6 +28,25 @@ const optionsWithRef: CompilerOptions = {
     resolve: { external: true },
   },
 };
+
+describe('Capitalize string', () => {
+  test('If the string is empty, an empty string will be returned', () => {
+    expect(capitalize('')).toBe('');
+  });
+
+  test('If the string is number, capitalization working correctly', () => {
+    expect(capitalize('200')).toBe('200');
+  });
+
+  test('If the string contains specific symbols, capitalization working correctly', () => {
+    expect(capitalize('foo/bar*&baz')).toBe('Foo/bar*&baz');
+  });
+
+  test('Capitalization working correctly', () => {
+    expect(capitalize('foo')).toBe('Foo');
+    expect(capitalize('BAR')).toBe('Bar');
+  });
+});
 
 describe('Normalize title', () => {
   test('If the title is empty, an empty string will be returned', () => {

@@ -4,13 +4,13 @@ import { JSONSchema4 } from 'json-schema';
 import { compile as compileJson } from 'json-schema-to-typescript';
 
 import {
-  cachedMethods,
   cachedSchemas,
   cachedSchemasWithBody,
   methodsWithBody,
   rootName,
 } from './constants';
 import {
+  capitalize,
   createSchemaObject,
   generateEndpointName,
   normalizeTitle,
@@ -71,9 +71,7 @@ export const transformMethodLevel = (
 
     methods.forEach((method) => {
       if (!ignoreHead || method !== 'HEAD') {
-        const { capitalized } = cachedMethods[method];
-
-        const newTitle = title + capitalized;
+        const newTitle = title + capitalize(method);
         const schema = record.schema || {};
 
         const list = methodsWithBody.includes(method)
