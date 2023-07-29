@@ -7,9 +7,10 @@
     "postinstall": "yarn run build",
     "build": "tsc -b",
     "watch": "tsc-watch --onSuccess \"yarn run start\"",
-    "start": "NODE_PATH=build/ node ./build"
+    "start": "cross-env NODE_PATH=build/ node ./build"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "fastify": "^4.21.0",
     "fastify-extract-definitions": "^2.2.2",
     "tsc-watch": "^6.0.4",
