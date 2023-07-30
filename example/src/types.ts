@@ -26,10 +26,8 @@ import {
 
 export type RouteHandlerMethod<
   RawServer extends RawServerBase = RawServerDefault,
-  RawRequest extends
-    RawRequestDefaultExpression<RawServer> = RawRequestDefaultExpression<RawServer>,
-  RawReply extends
-    RawReplyDefaultExpression<RawServer> = RawReplyDefaultExpression<RawServer>,
+  RawRequest extends RawRequestDefaultExpression<RawServer> = RawRequestDefaultExpression<RawServer>,
+  RawReply extends RawReplyDefaultExpression<RawServer> = RawReplyDefaultExpression<RawServer>,
   RouteGeneric extends RouteGenericInterface = RouteGenericInterface,
   ContextConfig = ContextConfigDefault,
   SchemaCompiler extends FastifySchema = FastifySchema,
@@ -39,7 +37,7 @@ export type RouteHandlerMethod<
     SchemaCompiler,
     RouteGeneric
   >,
-  Logger extends FastifyLoggerInstance = FastifyLoggerInstance,
+  Logger extends FastifyLoggerInstance = FastifyLoggerInstance
 > = (
   this: FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider>,
   request: FastifyRequest<
@@ -66,7 +64,7 @@ export type RouteHandlerMethod<
 
 export type Handler<
   RouteGeneric extends RouteGenericInterface = RouteGenericInterface,
-  ContextConfig = ContextConfigDefault,
+  ContextConfig = ContextConfigDefault
 > = RouteHandlerMethod<
   RawServerDefault,
   RawRequestDefaultExpression,

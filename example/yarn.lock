@@ -339,15 +339,15 @@ fast-uri@^2.0.0, fast-uri@^2.1.0:
   resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-2.1.0.tgz#9279432d6b53675c90116b947ed2bbba582d6fb5"
   integrity sha512-qKRta6N7BWEFVlyonVY/V+BMLgFqktCUV0QjT259ekAIlbVrMaFnFLxJ4s/JPl4tou56S1BzPufI60bLe29fHA==
 
-fastify-extract-definitions@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-3.0.0.tgz#ef454ee885d44543c413d4c0fbdb1b5ec6d277f3"
-  integrity sha512-nUhZ6Tl9F5fXJRvIblAk4rVRosKarbxYFJNIX2Fr0/C2VzhL0t1FlbntA8gRNIhdSQWKxW9vM1anJ5dPmKFXUQ==
+fastify-extract-definitions@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-3.0.1.tgz#60fc12a17a0f1f1772bf8d0efe837605f3958943"
+  integrity sha512-0oO/HSZlaB0WgIlF74WPNjVyEsNtp5hN2LPRvZSdbo1t4Hjx/CfTJWYKSlMp6WVSPXCq7PnNGdkOc86Q7V8Ghg==
   dependencies:
     "@fastify/routes" "^5.1.0"
     fastify-plugin "^4.5.1"
     json-schema-to-typescript "^10.1.5"
-    prettier "^3.0.0"
+    prettier "^2.8.8"
 
 fastify-plugin@^4.0.0:
   version "4.0.0"
@@ -678,10 +678,10 @@ prettier@^2.2.0:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
   integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
-prettier@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
-  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
+prettier@^2.8.8:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
+  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
 process-warning@^2.0.0:
   version "2.0.0"
