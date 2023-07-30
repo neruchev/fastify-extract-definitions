@@ -12,7 +12,7 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "fastify": "^4.21.0",
-    "fastify-extract-definitions": "^2.2.2",
+    "fastify-extract-definitions": "^3.0.0",
     "tsc-watch": "^6.0.4",
     "typescript": "^5.1.6"
   }

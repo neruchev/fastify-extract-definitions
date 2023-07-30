@@ -339,25 +339,25 @@ fast-uri@^2.0.0, fast-uri@^2.1.0:
   resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-2.1.0.tgz#9279432d6b53675c90116b947ed2bbba582d6fb5"
   integrity sha512-qKRta6N7BWEFVlyonVY/V+BMLgFqktCUV0QjT259ekAIlbVrMaFnFLxJ4s/JPl4tou56S1BzPufI60bLe29fHA==
 
-fastify-extract-definitions@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-2.2.2.tgz#792607eb3d09f85fa3be59e9987cf164aa559a27"
-  integrity sha512-WcxDC9GR49sXfI4/7mPUXLSrldr+z/EAwkebME921QAf/TnLpM3mtY+zmaEH1nHFLfiz2+6bTHK2H+VT85tgqQ==
+fastify-extract-definitions@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/fastify-extract-definitions/-/fastify-extract-definitions-3.0.0.tgz#ef454ee885d44543c413d4c0fbdb1b5ec6d277f3"
+  integrity sha512-nUhZ6Tl9F5fXJRvIblAk4rVRosKarbxYFJNIX2Fr0/C2VzhL0t1FlbntA8gRNIhdSQWKxW9vM1anJ5dPmKFXUQ==
   dependencies:
     "@fastify/routes" "^5.1.0"
-    fastify-plugin "^4.5.0"
+    fastify-plugin "^4.5.1"
     json-schema-to-typescript "^10.1.5"
-    prettier "^2.7.1"
+    prettier "^3.0.0"
 
 fastify-plugin@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-4.0.0.tgz#65c2f538a8d869d59c7364a56565687e78e32390"
   integrity sha512-ZJcXPPcqkj7HFDYqbsCuOIAgIZ/sd2b+OnBxNGyxAcUDUJfIpxp4t23CwxO2E7LZpqUrIliA4TnjxTXG8mLoqw==
 
-fastify-plugin@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-4.5.0.tgz#8b853923a0bba6ab6921bb8f35b81224e6988d91"
-  integrity sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==
+fastify-plugin@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-4.5.1.tgz#44dc6a3cc2cce0988bc09e13f160120bbd91dbee"
+  integrity sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==
 
 fastify@^4.21.0:
   version "4.21.0"
@@ -673,10 +673,15 @@ pino@^8.12.0:
     sonic-boom "^3.1.0"
     thread-stream "^2.0.0"
 
-prettier@^2.2.0, prettier@^2.7.1:
+prettier@^2.2.0:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
   integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
+prettier@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
+  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
 
 process-warning@^2.0.0:
   version "2.0.0"
