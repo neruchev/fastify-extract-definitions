@@ -4,6 +4,9 @@ import { CompilerOptions } from './types';
 
 const generated: Record<string, number> = {};
 
+const calcCwd = (cwd: string) =>
+  process.platform === 'win32' ? cwd.replace(/\\/g, '/') : cwd;
+
 export const capitalize = (str: string) =>
   (str[0] ?? '').toUpperCase() + str.substring(1).toLowerCase();
 
@@ -53,7 +56,7 @@ export const patchCompilerOptions = (
   options: CompilerOptions,
   definitions: JSONSchema4
 ): CompilerOptions => {
-  const cwd = options.cwd || process.cwd();
+  const cwd = calcCwd(options.cwd || process.cwd());
 
   return {
     ...options,
@@ -64,7 +67,7 @@ export const patchCompilerOptions = (
       resolve: {
         file: {
           read: (file) => {
-            const key = file.url.replace(cwd, '');
+            const key = file.url.substring(cwd.length);
             const text = definitions[key] || definitions[key.slice(1)];
 
             if (!text) {
