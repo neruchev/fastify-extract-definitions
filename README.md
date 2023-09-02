@@ -54,13 +54,13 @@ See [example](./example) for more details.
 
 ## Options
 
-| key             | type    | default                                                                                                          | description                                                                                          |
-| --------------- | ------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| enabled         | boolean | `false`                                                                                                          | Is the plugin enabled?                                                                               |
-| ignoreHead      | boolean | `false`                                                                                                          | Ignore HEAD endpoints                                                                                |
-| outputs         | object  | `{}`                                                                                                             | Outputs config                                                                                       |
-| compilerOptions | object  | See [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript#options) default options | [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript#options) options |
-|                 |
+| key             | type                                     | default                                                                                                          | description                                                                                          |
+| --------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| enabled         | `boolean`                                | `false`                                                                                                          | Is the plugin enabled?                                                                               |
+| ignoreHead      | `boolean`                                | `false`                                                                                                          | Ignore HEAD endpoints                                                                                |
+| outputs         | `object`                                 | `{}`                                                                                                             | Outputs config                                                                                       |
+| compilerOptions | `object`                                 | See [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript#options) default options | [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript#options) options |
+| onSchemaReady   | `(schema: JSONSchema4) => Promise<void>` | -                                                                                                                | Set the handler to custom handle json schema                                                         |
 
 ### Outputs config
 

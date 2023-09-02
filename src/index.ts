@@ -29,7 +29,7 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
     const outputs = Object.keys(options.outputs);
     const baseComment = options.compilerOptions?.bannerComment || bannerComment;
 
-    const [text, prettier] = await Promise.all([
+    const [{ text, schema }, prettier] = await Promise.all([
       compile(
         app.routes,
         definitions,
@@ -38,6 +38,10 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
       ),
       prettify(options.compilerOptions),
     ]);
+
+    if (options.onSchemaReady) {
+      await options.onSchemaReady(schema);
+    }
 
     await Promise.all(
       outputs.map(async (output) => {
