@@ -119,8 +119,11 @@ export const compile = async (
 
   const text = await compileJson(schema, rootName, options);
 
-  return text
-    .replace(/\}\n\//g, '}\n\n/')
-    .replace(/\}\nexport /g, '}\n\nexport ')
-    .replace(/export type/g, '\nexport type');
+  return {
+    text: text
+      .replace(/\}\n\//g, '}\n\n/')
+      .replace(/\}\nexport /g, '}\n\nexport ')
+      .replace(/export type/g, '\nexport type'),
+    schema,
+  };
 };

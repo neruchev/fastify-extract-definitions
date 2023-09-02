@@ -1,5 +1,6 @@
 import { RouteOptions } from 'fastify';
 import { Options } from 'json-schema-to-typescript';
+import { JSONSchema4 } from 'json-schema';
 import { FastifyRoutes } from '@fastify/routes';
 
 export type Result = string;
@@ -18,4 +19,5 @@ export type ExtractorOptions = {
     };
   };
   compilerOptions?: CompilerOptions;
+  onSchemaReady?: (schema: JSONSchema4) => Promise<void>;
 };

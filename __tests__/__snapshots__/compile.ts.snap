@@ -1,7 +1,151 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Compile Handle duplicates Compiler with \`unreachableDefinitions\` option working correctly 1`] = `
-"
+{
+  "schema": {
+    "additionalProperties": false,
+    "definitions": {
+      "enums": {
+        "$id": "enums",
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "production",
+              "staging",
+              "development",
+              "test",
+            ],
+            "title": "Mode",
+            "type": "string",
+          },
+        },
+        "required": [
+          "mode",
+        ],
+        "title": "enums",
+        "type": "object",
+      },
+    },
+    "id": "API",
+    "properties": {
+      "/a": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "enum": [
+                  "production",
+                  "staging",
+                  "development",
+                  "test",
+                ],
+                "title": "A1GetParams",
+                "type": "string",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "A1Get",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+      "/b": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "title": "Mode",
+                "type": "number",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "B1Get",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+      "/c": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "title": "Mode",
+                "type": "string",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "C1Get",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+      "/d": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "title": "Mode",
+                "type": "string",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "D1Get",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+    },
+    "required": [
+      "/a",
+      "/b",
+      "/c",
+      "/d",
+    ],
+    "title": "API",
+    "type": "object",
+  },
+  "text": "
 export type A1GetParams = ("production" | "staging" | "development" | "test")
 
 export type Mode = number
@@ -50,11 +194,156 @@ Params: Mode2
 export interface Enums {
 mode: Mode3
 }
-"
+",
+}
 `;
 
 exports[`Compile Handle duplicates Compiler working correctly 1`] = `
-"
+{
+  "schema": {
+    "additionalProperties": false,
+    "definitions": {
+      "enums": {
+        "$id": "enums",
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "production",
+              "staging",
+              "development",
+              "test",
+            ],
+            "title": "Mode",
+            "type": "string",
+          },
+        },
+        "required": [
+          "mode",
+        ],
+        "title": "enums",
+        "type": "object",
+      },
+    },
+    "id": "API",
+    "properties": {
+      "/a": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "enum": [
+                  "production",
+                  "staging",
+                  "development",
+                  "test",
+                ],
+                "title": "AGetParams",
+                "type": "string",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "AGet",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+      "/b": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "title": "Mode",
+                "type": "number",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "BGet",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+      "/c": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "title": "Mode",
+                "type": "string",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "CGet",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+      "/d": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "title": "Mode",
+                "type": "string",
+              },
+            },
+            "required": [
+              "Params",
+            ],
+            "title": "DGet",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+    },
+    "required": [
+      "/a",
+      "/b",
+      "/c",
+      "/d",
+    ],
+    "title": "API",
+    "type": "object",
+  },
+  "text": "
 export type AGetParams = ("production" | "staging" | "development" | "test")
 
 export type Mode = number
@@ -93,11 +382,98 @@ Params: Mode1
 export interface DGet {
 Params: Mode2
 }
-"
+",
+}
 `;
 
 exports[`Compile Handle refs Compiler with \`unreachableDefinitions\` option working correctly 1`] = `
-"
+{
+  "schema": {
+    "additionalProperties": false,
+    "definitions": {
+      "enums": {
+        "$id": "enums",
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "production",
+              "staging",
+              "development",
+              "test",
+            ],
+            "title": "Mode",
+            "type": "string",
+          },
+        },
+        "required": [
+          "mode",
+        ],
+        "title": "enums",
+        "type": "object",
+      },
+    },
+    "id": "API",
+    "properties": {
+      "/": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "enum": [
+                  "production",
+                  "staging",
+                  "development",
+                  "test",
+                ],
+                "title": "RootGetParams",
+                "type": "string",
+              },
+              "Reply": {
+                "additionalProperties": false,
+                "oneOf": [
+                  {
+                    "enum": [
+                      "production",
+                      "staging",
+                      "development",
+                      "test",
+                    ],
+                    "title": "Mode",
+                    "type": "string",
+                  },
+                ],
+                "properties": undefined,
+                "required": undefined,
+                "title": "RootGetReply",
+                "type": "object",
+              },
+            },
+            "required": [
+              "Params",
+              "Reply",
+            ],
+            "title": "RootGet",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+    },
+    "required": [
+      "/",
+    ],
+    "title": "API",
+    "type": "object",
+  },
+  "text": "
 export type RootGetParams = ("production" | "staging" | "development" | "test")
 
 export type RootGetReply = Mode
@@ -122,11 +498,98 @@ Reply: RootGetReply
 export interface Enums {
 mode: Mode
 }
-"
+",
+}
 `;
 
 exports[`Compile Handle refs Compiler working correctly 1`] = `
-"
+{
+  "schema": {
+    "additionalProperties": false,
+    "definitions": {
+      "enums": {
+        "$id": "enums",
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "production",
+              "staging",
+              "development",
+              "test",
+            ],
+            "title": "Mode",
+            "type": "string",
+          },
+        },
+        "required": [
+          "mode",
+        ],
+        "title": "enums",
+        "type": "object",
+      },
+    },
+    "id": "API",
+    "properties": {
+      "/": {
+        "additionalProperties": false,
+        "properties": {
+          "GET": {
+            "additionalProperties": false,
+            "description": undefined,
+            "properties": {
+              "Params": {
+                "enum": [
+                  "production",
+                  "staging",
+                  "development",
+                  "test",
+                ],
+                "title": "RootGetParams",
+                "type": "string",
+              },
+              "Reply": {
+                "additionalProperties": false,
+                "oneOf": [
+                  {
+                    "enum": [
+                      "production",
+                      "staging",
+                      "development",
+                      "test",
+                    ],
+                    "title": "Mode",
+                    "type": "string",
+                  },
+                ],
+                "properties": undefined,
+                "required": undefined,
+                "title": "RootGetReply",
+                "type": "object",
+              },
+            },
+            "required": [
+              "Params",
+              "Reply",
+            ],
+            "title": "RootGet",
+            "type": "object",
+          },
+        },
+        "required": [
+          "GET",
+        ],
+        "title": undefined,
+        "type": "object",
+      },
+    },
+    "required": [
+      "/",
+    ],
+    "title": "API",
+    "type": "object",
+  },
+  "text": "
 export type RootGetParams = ("production" | "staging" | "development" | "test")
 
 export type RootGetReply = Mode
@@ -143,7 +606,8 @@ export interface RootGet {
 Params: RootGetParams
 Reply: RootGetReply
 }
-"
+",
+}
 `;
 
 exports[`Transform root level Transformer works correctly 1`] = `

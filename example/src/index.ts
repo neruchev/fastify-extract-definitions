@@ -34,6 +34,7 @@ fastify.register(extractor, {
       target: 'serverTypes',
     },
   },
+  onSchemaReady: async (schema) => console.log(schema),
 });
 
 fastify.register(async (fastify) => {
