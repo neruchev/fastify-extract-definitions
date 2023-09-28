@@ -39,20 +39,22 @@ const plugin: FastifyPluginCallback<ExtractorOptions> = async (
       prettify(options.compilerOptions),
     ]);
 
-    if (options.onSchemaReady) {
-      await options.onSchemaReady(schema);
-    }
-
-    await Promise.all(
-      outputs.map(async (output) => {
+    const result = [
+      ...outputs.map(async (output) => {
         const item = options.outputs[output];
         const isServer = item.target === 'serverTypes';
         const banner = baseComment + (isServer ? bannerImports : '');
 
         const formatted = await prettier(banner + text);
         await save(formatted, output);
-      })
-    );
+      }),
+    ];
+
+    if (options.onSchemaReady) {
+      result.push(options.onSchemaReady(schema));
+    }
+
+    await Promise.all(result);
   });
 
   done();
