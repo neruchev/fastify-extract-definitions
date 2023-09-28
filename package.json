@@ -33,7 +33,7 @@
   "dependencies": {
     "@fastify/routes": "^5.1.0",
     "fastify-plugin": "^4.5.1",
-    "json-schema-to-typescript": "^10.1.5",
+    "json-schema-to-typescript": "10.1.5",
     "prettier": "^2.8.8"
   },
   "devDependencies": {
